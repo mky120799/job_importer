@@ -60,25 +60,69 @@ Frontend admin dashboard for the Scalable Job Importer. Built with Next.js 16, R
 ## Project Structure
 
 ```
-client/
-├── app/
-│   ├── api/                    # Next.js API routes (proxies to backend)
-│   │   ├── import-history/     # GET /api/import-history
-│   │   └── trigger-import/     # GET /api/trigger-import
-│   ├── components/             # React components
-│   │   ├── ImportCard.tsx      # Stat card component
-│   │   ├── LogTable.tsx        # Import logs table
-│   │   └── Pagination.tsx      # Pagination controls
-│   ├── import-history/         # Import history page
-│   │   └── page.tsx
-│   ├── layout.tsx              # Root layout
-│   ├── page.tsx                # Home page
-│   └── globals.css             # Global styles
-├── lib/
-│   └── getApiBaseUrl.ts        # API base URL helper
-├── next.config.ts              # Next.js configuration
-├── tailwind.config.ts          # Tailwind CSS configuration
-└── tsconfig.json               # TypeScript configuration
+/Users/mky1207/Desktop/job_importer/
+├── .DS_Store
+├── client/
+│   ├─] .env (ignored)
+│   ├── .gitignore
+│   ├─] .next/ (ignored)
+│   ├── app/
+│   │   ├── api/
+│   │   │   ├── import-history/
+│   │   │   │   └── route.ts
+│   │   │   └── trigger-import/
+│   │   │       └── route.ts
+│   │   ├── components/
+│   │   │   ├── ImportCard.tsx
+│   │   │   ├── LogTable.tsx
+│   │   │   └── Pagination.tsx
+│   │   ├── globals.css
+│   │   ├── import-history/
+│   │   │   └── page.tsx
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── tailwind.config.ts
+│   ├── eslint.config.mjs
+│   ├── lib/
+│   │   └── getApiBaseUrl.ts
+│   ├─] next-env.d.ts (ignored)
+│   ├── next.config.ts
+│   ├─] node_modules/ (ignored)
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── postcss.config.mjs
+│   └── tsconfig.json
+├── readme.md
+└── server/
+    ├── .dockerignore
+    ├─] .env (ignored)
+    ├── .gitignore
+    ├── Dockerfile
+    ├── docker-compose.yml
+    ├─] node_modules/ (ignored)
+    ├── package-lock.json
+    ├── package.json
+    ├── request.http
+    └── src/
+        ├── config/
+        │   └── jobSources.js
+        ├── cron/
+        │   └── fetchCron.js
+        ├── models/
+        │   ├── ImportLog.js
+        │   └── Job.js
+        ├── queue/
+        │   └── queue.js
+        ├── server.js
+        ├── services/
+        │   ├── fetchJobs.js
+        │   └── jobService.js
+        ├── utils/
+        │   ├── logger.js
+        │   └── xmlToJson.js
+        └── workers/
+            └── jobWorker.js
+           # TypeScript configuration
 ```
 
 ## Pages
