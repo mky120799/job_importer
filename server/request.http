@@ -1,0 +1,27 @@
+### Health Check
+GET http://localhost:4000/health
+
+### Import Logs - Get All (Default: page=0, limit=20)
+GET http://localhost:4000/api/import-logs
+
+### Import Logs - With Pagination (page=1, limit=50)
+GET http://localhost:4000/api/import-logs?page=1&limit=50
+
+### Trigger Manual Import with Default Sources
+POST http://localhost:4000/api/trigger-import
+Content-Type: application/json
+
+{
+  "sources": []
+}
+
+### Trigger Manual Import with Custom Sources
+POST http://localhost:4000/api/trigger-import
+Content-Type: application/json
+
+{
+  "sources": [
+    "https://www.w3schools.com/xml/note.xml",
+    "https://www.w3schools.com/xml/cd_catalog.xml"
+  ]
+}
