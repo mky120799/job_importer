@@ -312,26 +312,7 @@ npm run lint
 - Clear `.next` directory: `rm -rf .next` and rebuild
 - Check TypeScript errors: `npx tsc --noEmit`
 
-### Styling Issues
 
-- Ensure Tailwind CSS is properly configured
-- Check that `globals.css` is imported in `layout.tsx`
-- Verify PostCSS configuration in `postcss.config.mjs`
-
-### Pagination Not Working
-
-- Check browser console for API errors
-- Verify backend returns `total` count in response
-- Ensure pagination state is properly managed
-
-## Deployment
-
-### Build for Production
-
-```bash
-npm run build
-npm start
-```
 
 ### Environment Variables for Production
 
@@ -339,20 +320,6 @@ Set the following environment variables in your deployment platform:
 
 - `NEXT_PUBLIC_API_URL` - Backend API URL (e.g., `https://api.example.com`)
 
-### Recommended Platforms
-
-- **Vercel** - Optimized for Next.js deployments
-- **Netlify** - Supports Next.js with minimal configuration
-- **Docker** - Containerize the application
-
-## Next Steps
-
-- Add real-time updates using WebSockets or polling
-- Implement filtering and sorting for import logs
-- Add export functionality for import history
-- Create detailed view for individual import logs
-- Add charts and graphs for import statistics
-- Implement user authentication and authorization
 
 ## Notes
 
@@ -446,11 +413,6 @@ curl "http://localhost:4000/api/import-logs?page=0&limit=20"
 - Upsert logic tries `url`, then `externalId`, fallback `title+company`.
 - Cron queueing logic enqueues a `scheduled-fetch` job every hour by default. Workers process fetch -> upsert and create import logs.
 - Errors in processing an item don't stop the run — they are captured in `failedJobs` in the log.
-
-## Bonus ideas implemented
-- Concurrency (via `WORKER_CONCURRENCY`)
-- Batch size (via `BATCH_SIZE`)
-- Import logs stored per-source with reasons for failures.
 
 **Testing with VS Code REST Client**
 
